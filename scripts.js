@@ -9,3 +9,7 @@ function closeOverlay() {
     const overlay = document.getElementById("overlay");
     overlay.classList.remove("active");
 }
+function handleClick(event, mapName) {
+    // Lógica para manejar el clic
+    openImage(mapName);
+}
