@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapas de Brawl Stars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .mode {
+            margin: 20px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .maps img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function openImage(src) {
+            window.open(src, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mapas de Brawl Stars</h1>
+        
+        <div class="mode">
+            <h2>Supervivencia</h2>
+            <div class="maps">
+                <img src="imagenes/supervivencia1.jpg" alt="Mapa Supervivencia 1" onclick="openImage('imagenes/supervivencia1.jpg')">
+                <img src="imagenes/supervivencia2.jpg" alt="Mapa Supervivencia 2" onclick="openImage('imagenes/supervivencia2.jpg')">
+                <img src="15000701.jpg" alt="Prueba 1" onclick="openImage('15000701.jpg')">
+            </div>
+        </div>
+
+        <div class="mode">
+            <h2>Atraco</h2>
+            <div class="maps">
+                <img src="imagenes/atraco1.jpg" alt="Mapa Atraco 1" onclick="openImage('imagenes/atraco1.jpg')">
+                <img src="imagenes/atraco2.jpg" alt="Mapa Atraco 2" onclick="openImage('imagenes/atraco2.jpg')">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
