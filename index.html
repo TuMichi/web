@@ -39,7 +39,29 @@
     </section>
     <section class="game-section" id="balonbrawl">
         <h2>Balon Brawl</h2>
-        <img src="images/balonbrawl.jpg" alt="Balon Brawl" class="game-image" onclick="openImage('balonbrawl')">
+        <div style="display: flex; gap: 10px;">
+            <div>
+                <h3>Estadio Estruendoso</h3>
+               <img src="images/EstadioEstruendosoBBMap.webp" alt="Estadio Estruendoso" class="game-image" onclick="handleClick(event, 'balonbrawl')" width="150" height="250" usemap="#map4">
+<map name="map4">
+    <area shape="rect" coords="0,0,150,250" alt="Estadio Estruendoso" href="a">
+</map>
+            </div>
+            <div>
+                <h3>Pinball</h3>
+                <img src="images/PinballBBMap.webp" alt="Pinball" class="game-image" onclick="handleClick(event, 'balonbrawl')" width="150" height="250" usemap="#map5">
+                <map name="map5">
+                    <area shape="rect" coords="0,0,150,250" alt="Salon Recreativo" href="a">
+                </map>
+            </div>
+             <div>
+                <h3>Palco Central</h3>
+                <img src="images/PalcoCentralBBMap.webp" alt="Palco Central" class="game-image" onclick="handleClick(event, 'balonbrawl')" width="150" height="250" usemap="#map6">
+                <map name="map6">
+                    <area shape="rect" coords="0,0,150,250" alt="Palco Central" href="a">
+                </map>
+            </div>
+        </div>
     </section>
     <section class="game-section" id="cazaestelar">
         <h2>Caza Estelar</h2>
