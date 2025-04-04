@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Web de Juegos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a mi Web de Juegos</h1>
+    </header>
+
+    <section class="game-section" id="atrapagema">
+        <h2>Atrapa Gemas</h2>
+        <img src="images/atrapagema.jpg" alt="Atrapa Gemas" class="game-image" onclick="openImage('atrapagema')">
+    </section>
+    <section class="game-section" id="balonbrawl">
+        <h2>Balon Brawl</h2>
+        <img src="images/balonbrawl.jpg" alt="Balon Brawl" class="game-image" onclick="openImage('balonbrawl')">
+    </section>
+    <section class="game-section" id="cazaestelar">
+        <h2>Caza Estelar</h2>
+        <img src="images/cazaestelar.jpg" alt="Caza Estelar" class="game-image" onclick="openImage('cazaestelar')">
+    </section>
+    <section class="game-section" id="atraco">
+        <h2>Atraco</h2>
+        <img src="images/atraco.jpg" alt="Atraco" class="game-image" onclick="openImage('atraco')">
+    </section>
+    <section class="game-section" id="zonarestringida">
+        <h2>Zona Restringida</h2>
+        <img src="images/zonarestringida.jpg" alt="Zona Restringida" class="game-image" onclick="openImage('zonarestringida')">
+    </section>
+    <section class="game-section" id="noqueo">
+        <h2>Noqueo</h2>
+        <img src="images/noqueo.jpg" alt="Noqueo" class="game-image" onclick="openImage('noqueo')">
+    </section>
+
+    <div id="overlay" class="overlay" onclick="closeOverlay()">
+        <img id="overlay-image" src="" alt="Imagen amplia">
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
