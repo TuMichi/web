@@ -50,3 +50,7 @@ header {
 .overlay.active {
     display: flex;
 }
+.img {
+    height: 50px
+    width: 50px
+}
