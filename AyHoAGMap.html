@@ -12,20 +12,25 @@
         .pfp-image {
             width: 50px;
             height: 50px;
-            margin-left: 10px; 
-            margin-bottom: 5px;  
+            margin-left: 10px; /* Espacio entre las imágenes */
+            margin-bottom: 5px; /* Espacio hacia abajo */
         }
         .container {
             display: flex;
+        }
+        .left-column, .right-column {
+            display: flex;
             flex-direction: column;
-            align-items: flex-end; /* Alinea las imágenes a la derecha */
+        }
+        .right-column {
+            margin-left: 20px; /* Separación entre columnas */
         }
     </style>
 </head>
 <body>
-    <div style="display: flex;">
-        <img src="images/AyHoAGMap.webp" alt="Ay Ho!" width="375" height="625" class="aligned-image">
-        <div class="container">
+    <div class="container">
+        <div class="left-column">
+            <img src="images/AyHoAGMap.webp" alt="Ay Ho!" width="375" height="625" class="aligned-image">
             <img id="lumi" src="images/Lumi1-pfp.webp" alt="Lumi" width="50" height="50" class="aligned-image pfp-image">
             <img id="tara" src="images/Tara1-pfp.webp" alt="Tara" class="aligned-image pfp-image">
             <img id="spike" src="images/Spike1-pfp.webp" alt="Spike" class="aligned-image pfp-image">
@@ -37,6 +42,8 @@
             <img id="pearl" src="images/Pearl1-pfp.webp" alt="Pearl" class="aligned-image pfp-image">
             <img id="ollie" src="images/Ollie-pfp.webp" alt="Ollie" class="aligned-image pfp-image">
             <img id="nani" src="images/Nani1-pfp.webp" alt="Nani" class="aligned-image pfp-image">
+        </div>
+        <div class="right-column">
             <img id="moe" src="images/Moe-pfp.webp" alt="Moe" class="aligned-image pfp-image">
             <img id="mico" src="images/Mico1-pfp.webp" alt="Mico" class="aligned-image pfp-image">
             <img id="melodie" src="images/Melodie-pfp.webp" alt="Melodie" class="aligned-image pfp-image">
