@@ -50,7 +50,8 @@ header {
 .overlay.active {
     display: flex;
 }
-.img {
+
+.pfp-image {
     height: 50px
     width: 50px
 }
