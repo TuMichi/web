@@ -5,32 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ah Yo!</title>
     <style>
-        .aligned-image {
-            display: inline-block;
-            vertical-align: top; 
-        }
-        .pfp-image {
-            width: 50px;
-            height: 50px;
-            margin-left: 10px; /* Espacio entre las imágenes */
-            margin-bottom: 5px; /* Espacio hacia abajo */
-        }
-        .container {
-            display: flex;
-            align-items: flex-start; /* Asegura que los elementos se alineen en la parte superior */
-        }
-        .columns-container {
-            display: flex;
-            flex-direction: column;
-            margin-left: 20px; /* Separación entre la imagen AyHo y las columnas */
-        }
-        .left-column, .right-column {
-            display: flex;
-            flex-direction: column;
-        }
-        .right-column {
-            margin-left: 60px; /* Separación entre las dos columnas */
-        }
+.aligned-image {
+    display: inline-block;
+    vertical-align: top; 
+}
+.pfp-image {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px; /* Espacio entre las imágenes */
+    margin-bottom: 5px; /* Espacio hacia abajo */
+}
+.container {
+    display: flex;
+    align-items: flex-start; /* Asegura que los elementos se alineen en la parte superior */
+    flex-grow: 1; /* Permite que el contenedor ocupe el espacio disponible */
+}
+.columns-container {
+    display: flex;
+    flex-direction: column; /* Asegura que las columnas estén en fila */
+    margin-left: 20px; /* Separación entre la imagen AyHo y las columnas */
+    flex-grow: 1; /* Permite que el contenedor de columnas ocupe el espacio disponible */
+}
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+}
+.right-column {
+    margin-left: 60px; /* Separación entre las dos columnas */
+}
     </style>
 </head>
 <body>
