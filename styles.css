@@ -59,3 +59,14 @@ header {
 .column-3 {
     margin-left: 20px; 
 }
+
+.columns-container {
+    line-height: 0;
+    -webkit: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 10px
+    -moz-column-gap: 10px
+    column-gap: 10px;
+}
+    
