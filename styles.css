@@ -55,3 +55,7 @@ header {
     height: 50px
     width: 50px
 }
+
+.column-3 {
+    margin-left: 20px; 
+}
