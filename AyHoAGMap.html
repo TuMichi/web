@@ -7,6 +7,49 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aligned-image {
+        display: inline-block;
+        vertical-align: top; 
+    }
+
+    .pfp-image {
+        width: 50px;
+        height: 50px;
+        margin-left: 10px; /* Espacio entre las imágenes */
+        margin-bottom: 5px; /* Espacio hacia abajo */
+    }
+
+    .container {
+        display: flex;
+        align-items: flex-start; /* Asegura que los elementos se alineen en la parte superior */
+    }
+
+    .columns-container {
+        display: flex;
+        flex-direction: row; /* Asegura que las columnas estén una al lado de la otra */
+        margin-left: 20px; /* Separación entre la imagen AyHo y las columnas */
+    }
+
+    .left-column, .right-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right-column {
+        margin-left: 20px; /* Separación entre las dos columnas */
+    }
+</style>
     <div class="container">
         <img src="images/AyHoAGMap.webp" alt="Ay Ho!" width="375" height="625" class="aligned-image">
         <div class="columns-container">
@@ -39,7 +82,7 @@
                 <img id="frank" src="images/Frank1-pfp.webp" alt="Frank" class="pfp-image">
                 <img id="finx" src="images/Finx1-pfp.webp" alt="Finx" class="pfp-image">
             </div>
-        </div>
-    </div>
-</body>
+        <div>
+     </div>
+ </body>
 </html>
