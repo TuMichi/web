@@ -156,19 +156,27 @@
         </div>
     </div>
     <script src="scripts.js"></script>
-    <script>
+<script>
 const images = document.querySelectorAll('.pfp-image');
-let placedImages = [];
+const dropArea = document.getElementById('drop-area');
 
 images.forEach(image => {
     image.addEventListener('mousedown', function(e) {
+        // Mover la imagen al dropArea si no está ya ahí
+        if (image.parentElement !== dropArea) {
+            const rect = image.getBoundingClientRect();
+            const offsetX = rect.left + window.scrollX;
+            const offsetY = rect.top + window.scrollY;
+
+            image.style.position = 'absolute';
+            image.style.left = offsetX + 'px';
+            image.style.top = offsetY + 'px';
+
+            dropArea.appendChild(image);
+        }
+
         let shiftX = e.clientX - image.getBoundingClientRect().left;
         let shiftY = e.clientY - image.getBoundingClientRect().top;
-
-        const originalLeft = image.style.left;
-        const originalTop = image.style.top;
-
-        image.style.zIndex = 1000; // Que esté al frente
 
         function moveAt(pageX, pageY) {
             image.style.left = pageX - shiftX + 'px';
@@ -184,27 +192,6 @@ images.forEach(image => {
         image.onmouseup = function() {
             document.removeEventListener('mousemove', onMouseMove);
             image.onmouseup = null;
-
-            const imageRect = image.getBoundingClientRect();
-            const overlaps = placedImages.some(other => {
-                if (other === image) return false;
-                const rect = other.getBoundingClientRect();
-                return !(imageRect.right < rect.left || 
-                         imageRect.left > rect.right || 
-                         imageRect.bottom < rect.top || 
-                         imageRect.top > rect.bottom);
-            });
-
-            if (overlaps) {
-                // Volver a la posición original si se solapa
-                image.style.left = originalLeft;
-                image.style.top = originalTop;
-            } else {
-                // Si no se solapa, guardamos que fue colocada
-                if (!placedImages.includes(image)) {
-                    placedImages.push(image);
-                }
-            }
         };
 
         image.ondragstart = function() {
@@ -212,6 +199,7 @@ images.forEach(image => {
         };
     });
 });
-    </script>
+</script>
+
 </body>
 </html>
