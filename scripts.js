@@ -36,8 +36,6 @@ vCarrito.addEventListener("drop", (event) => {
         let data = event.dataTransfer.getData("text");
         let draggedElement = document.getElementById(data);
         draggedElement.style.position = "absolute";
-        draggedElement.style.left = `${event.clientX - draggedElement.offsetWidth / 2}px`;
-        draggedElement.style.top = `${event.clientY - draggedElement.offsetHeight / 2}px`;
         event.target.appendChild(draggedElement);
     }
 });
