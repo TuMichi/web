@@ -17,7 +17,7 @@ function handleClick(event, mapName) {
 "use strict";
 
 let productos = document.querySelectorAll("#imagenes img");
-ler vCarrito = document.getElementById("mapa");
+let vCarrito = document.getElementById("mapa");
 for (let i = 0; i < productos.length; i++) {
     productos[i].setAttribute("draggable", "true");
     productos[i].addEventListener("dragstart", (event) => {
