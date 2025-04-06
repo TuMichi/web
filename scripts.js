@@ -32,9 +32,10 @@ vCarrito.addEventListener("dragover", (event) => {
 
 vCarrito.addEventListener("drop", (event) => {
     event.preventDefault();
-    if(event.target.className === "aligned-image"){
+    if (event.target.classList.contains("aligned-image")) {
         let data = event.dataTransfer.getData("text");
         let draggedElement = document.getElementById(data);
+        draggedElement.style.position = "absolute";
         draggedElement.style.left = `${event.clientX - draggedElement.offsetWidth / 2}px`;
         draggedElement.style.top = `${event.clientY - draggedElement.offsetHeight / 2}px`;
         event.target.appendChild(draggedElement);
