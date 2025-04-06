@@ -41,3 +41,18 @@ vCarrito.addEventListener("drop", (event) => {
         event.target.appendChild(draggedElement);
     }
 });
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') { // Cambia 'Enter' por la tecla que prefieras
+        liberarImagenes();
+    }
+});
+
+function liberarImagenes() {
+    const imagenes = document.querySelectorAll('img');
+    imagenes.forEach(imagen => {
+        // Lógica para liberar las imágenes
+        // Por ejemplo, cambiar la visibilidad o animarlas
+        imagen.style.display = 'block'; // Cambia 'block' a la forma en que deseas mostrar las imágenes
+    });
+}
