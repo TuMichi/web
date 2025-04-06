@@ -54,6 +54,7 @@ header {
 .pfp-image {
     height: 50px;
     width: 50px;
+    position: relative;
 }
 
 .column-3 {
@@ -68,4 +69,8 @@ header {
     -webkit-column-gap: 10px;
     -moz-column-gap: 10px;
     column-gap: 10px;
+}
+
+.container {
+    position: absolute;
 }
