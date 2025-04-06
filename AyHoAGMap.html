@@ -1,204 +1,191 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ah Yo!</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #272727;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .aligned-image {
-            display: inline-block;
-            vertical-align: top; 
-        }
-        .pfp-image {
-            width: 50px;
-            height: 50px;
-            margin-left: 10px; /* Espacio entre las imágenes */
-            margin-bottom: 5px; /* Espacio hacia abajo */
-            position: fixed; /* Necesario para mover libremente */
-            cursor: move; /* Cambia el cursor cuando pasas sobre la imagen */
-        }
-        .container {
-            position: relative;
-            display: flex;
-            align-items: flex-start; /* Asegura que los elementos se alineen en la parte superior */
-        }
-        .columns-container {
-            display: flex;
-            flex-direction: row; /* Asegura que las columnas estén una al lado de la otra */
-            margin-left: 20px; /* Separación entre la imagen AyHo y las columnas */
-        }
-        .left-column, .right-column, .center-column-1, .center-column-2, .center-column-3, .center-column-4, .center-column-5, .last-column {
-            display: flex;
-            flex-direction: column;
-        }
-        .right-column, .center-column-1, .center-column-2, .center-column-3, .center-column-4, .center-column-5, .last-column {
-            margin-left: 20px; /* Separación entre las columnas */
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img id="mapa" src="images/AyHoAGMap.webp" alt="Ay Ho!" width="375" height="625" class="aligned-image">
-        <div id="drop-area" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
-        <div id="imagenes" class="columns-container">
-            <div class="left-column">
-                <img id="8-bit1" src="iconos/8-Bit1-pfp.webp" alt="8-Bit1" class="pfp-image" draggable="true">
-                <img id="amber1" src="iconos/Amber1-pfp.webp" alt="Amber1" class="pfp-image" draggable="true">
-                <img id="angelo1" src="iconos/Angelo1-pfp.webp" alt="Angelo1" class="pfp-image" draggable="true">
-                <img id="ash1" src="iconos/Ash1-pfp.webp" alt="Ash1" class="pfp-image" draggable="true">
-                <img id="barley1" src="iconos/Barley1-pfp.webp" alt="Barley1" class="pfp-image" draggable="true">
-                <img id="bea1" src="iconos/Bea1-pfp.webp" alt="Bea1" class="pfp-image" draggable="true">
-                <img id="belle1" src="iconos/Belle1-pfp.webp" alt="Belle1" class="pfp-image" draggable="true">
-                <img id="berry" src="iconos/Berry_pfp.webp" alt="Berry" class="pfp-image" draggable="true">
-                <img id="bibi1" src="iconos/Bibi1-pfp.webp" alt="Bibi1" class="pfp-image" draggable="true">
-                <img id="bo1" src="iconos/Bo1-pfp.webp" alt="Bo1" class="pfp-image" draggable="true">
-                <img id="bonnie1" src="iconos/Bonnie1-pfp.webp" alt="Bonnie1" class="pfp-image" draggable="true">
-            </div>
-            <div class="right-column">
-                <img id="brock" src="iconos/Brock-pfp.webp" alt="Brock" class="pfp-image">
-                <img id="bull1" src="iconos/Bull1-pfp.webp" alt="Bull1" class="pfp-image">
-                <img id="buster1" src="iconos/Buster1-pfp.webp" alt="Buster1" class="pfp-image">
-                <img id="buzz1" src="iconos/Buzz1-pfp.webp" alt="Buzz1" class="pfp-image">
-                <img id="byron1" src="iconos/Byron1pfp.webp" alt="Byron1" class="pfp-image">
-                <img id="carl1" src="iconos/Carl1-pfp.webp" alt="Carl1" class="pfp-image">
-                <img id="charlie1" src="iconos/Charlie1-pfp.webp" alt="Charlie1" class="pfp-image">
-                <img id="chester1" src="iconos/Chester1-pfp.webp" alt="Chester1" class="pfp-image">
-                <img id="chuck1" src="iconos/Chuck1-pfp.webp" alt="Chuck1" class="pfp-image">
-                <img id="clancy" src="iconos/Clancy_pfp.webp" alt="Clancy" class="pfp-image">
-                <img id="colette1" src="iconos/Colette1-pfp.webp" alt="Colette1" class="pfp-image">
-            </div>
-            <div class="center-column-1">
-                <img id="colt1" src="iconos/Colt1-pfp.webp" alt="Colt1" class="pfp-image">
-                <img id="cordelius1" src="iconos/Cordelius1-pfp.webp" alt="Cordelius1" class="pfp-image">
-                <img id="crow1" src="iconos/Crow1-pfp.webp" alt="Crow1" class="pfp-image">
-                <img id="darryl1" src="iconos/Darryl1-pfp.webp" alt="Darryl1" class="pfp-image">
-                <img id="doug1" src="iconos/Doug1-pfp.webp" alt="Doug1" class="pfp-image">
-                <img id="draco1" src="iconos/Draco1-pfp.webp" alt="Draco1" class="pfp-image">
-                <img id="dynamike1" src="iconos/Dynamike1-pfp.webp" alt="Dynamike1" class="pfp-image">
-                <img id="edgar1" src="iconos/Edgar1-pfp.webp" alt="Edgar1" class="pfp-image">
-                <img id="el_primo1" src="iconos/El_Primo1-pfp.webp" alt="El Primo1" class="pfp-image">
-                <img id="emz" src="iconos/Emz-pfp.webp" alt="Emz" class="pfp-image">
-                <img id="eve1" src="iconos/Eve1-pfp.webp" alt="Eve1" class="pfp-image">
-            </div>
-            <div class="center-column-2">
-                <img id="fang1" src="iconos/Fang1-pfp.webp" alt="Fang1" class="pfp-image">
-                <img id="finx1" src="iconos/Finx1-pfp.webp" alt="Finx1" class="pfp-image">
-                <img id="frank1" src="iconos/Frank1-pfp.webp" alt="Frank1" class="pfp-image">
-                <img id="gale1" src="iconos/Gale1-pfp.webp" alt="Gale1" class="pfp-image">
-                <img id="gene1" src="iconos/Gene1-pfp.webp" alt="Gene1" class="pfp-image">
-                <img id="griff1" src="iconos/Griff1-pfp.webp" alt="Griff1" class="pfp-image">
-                <img id="grom1" src="iconos/Grom1pfp.webp" alt="Grom1" class="pfp-image">
-                <img id="gus1" src="iconos/Gus1-pfp.webp" alt="Gus1" class="pfp-image">
-                <img id="hank1" src="iconos/Hank1-pfp.webp" alt="Hank1" class="pfp-image">
-                <img id="jacky1" src="iconos/Jacky1-pfp.webp" alt="Jacky1" class="pfp-image">
-                <img id="janet1" src="iconos/Janet1-pfp.webp" alt="Janet1" class="pfp-image">
-            </div>
-            <div class="center-column-3">
-                <img id="jessie1" src="iconos/Jessie1-pfp.webp" alt="Jessie1" class="pfp-image">
-                <img id="juju" src="iconos/Juju-pfp.webp" alt="Juju" class="pfp-image">
-                <img id="kenji" src="iconos/Kenji-pfp.webp" alt="Kenji" class="pfp-image">
-                <img id="kit1" src="iconos/Kit1-pfp.webp" alt="Kit1" class="pfp-image">
-                <img id="larry_lawrie1" src="iconos/Larry_&_Lawrie1-pfp.webp" alt="Larry & Lawrie1" class="pfp-image">
-                <img id="leon1" src="iconos/Leon1-pfp.webp" alt="Leon1" class="pfp-image">
-                <img id="lily" src="iconos/Lily-pfp.webp" alt="Lily" class="pfp-image">
-                <img id="lola1" src="iconos/Lola1-pfp.webp" alt="Lola1" class="pfp-image">
-                <img id="lou1" src="iconos/Lou1-pfp.webp" alt="Lou1" class="pfp-image">
-                <img id="lum1" src="iconos/Lumi1-pfp.webp" alt="Lumi1" class="pfp-image">
-                <img id="maisie1" src="iconos/Maisie1-pfp.webp" alt="Maisie1" class="pfp-image">
-            </div>
-            <div class="center-column-4">
-                <img id="mandy1" src="iconos/Mandy1-pfp.webp" alt="Mandy1" class="pfp-image">
-                <img id="max1" src="iconos/Max1-pfp.webp" alt="Max1" class="pfp-image">
-                <img id="meeple" src="iconos/Meeple-pfp.webp" alt="Meeple" class="pfp-image">
-                <img id="meg1" src="iconos/Meg1-pfp.webp" alt="Meg1" class="pfp-image">
-                <img id="melodie" src="iconos/Melodie-pfp.webp" alt="Melodie" class="pfp-image">
-                <img id="mico1" src="iconos/Mico1-pfp.webp" alt="Mico1" class="pfp-image">
-                <img id="moe" src="iconos/Moe-pfp.webp" alt="Moe" class="pfp-image">
-                <img id="mortis1" src="iconos/Mortis1-pfp_29.webp" alt="Mortis1" class="pfp-image">
-                <img id="mr_p1" src="iconos/Mr._P1-pfp.webp" alt="Mr. P1" class="pfp-image">
-                <img id="nita1" src="iconos/Nita1-pfp.webp" alt="Nita1" class="pfp-image">
-                <img id="ollie" src="iconos/Ollie-pfp.webp" alt="Ollie" class="pfp-image">   
-            </div>
-            <div class="center-column-5">
-                <img id="otis_icon" src="iconos/Otis_Icon.webp" alt="Otis Icon" class="pfp-image">
-                <img id="pam1" src="iconos/Pam1-pfp.webp" alt="Pam1" class="pfp-image">
-                <img id="pearl1" src="iconos/Pearl1-pfp.webp" alt="Pearl1" class="pfp-image">
-                <img id="penny1" src="iconos/Penny1-pfp.webp" alt="Penny1" class="pfp-image">
-                <img id="piper1" src="iconos/Piper1-pfp.webp" alt="Piper1" class="pfp-image">
-                <img id="r-t1" src="iconos/R-T1-pfp.webp" alt="R-T1" class="pfp-image">
-                <img id="rico1" src="iconos/Rico1-pfp.webp" alt="Rico1" class="pfp-image">
-                <img id="ruffs1" src="iconos/Ruffs1-pfp.webp" alt="Ruffs1" class="pfp-image">
-                <img id="sam1" src="iconos/Sam1-pfp.webp" alt="Sam1" class="pfp-image">
-                <img id="sandy1" src="iconos/Sandy1-pfp.webp" alt="Sandy1" class="pfp-image">
-                <img id="shade" src="iconos/Shade-pfp.webp" alt="Shade" class="pfp-image">
-            </div>
-            <div class="last-column">
-                <img id="shelly1" src="iconos/Shelly1-pfp.webp" alt="Shelly1" class="pfp-image">
-                <img id="spike1" src="iconos/Spike1-pfp.webp" alt="Spike1" class="pfp-image">
-                <img id="sprout1" src="iconos/Sprout1-pfp.webp" alt="Sprout1" class="pfp-image">
-                <img id="squeak1" src="iconos/Squeak1-pfp.webp" alt="Squeak1" class="pfp-image">
-                <img id="stu1" src="iconos/Stu1-pfp.webp" alt="Stu1" class="pfp-image">
-                <img id="surge1" src="iconos/Surge1-pfp.webp" alt="Surge1" class="pfp-image">
-                <img id="tara1" src="iconos/Tara1-pfp.webp" alt="Tara1" class="pfp-image">
-                <img id="tick1" src="iconos/Tick1-pfp.webp" alt="Tick1" class="pfp-image">
-                <img id="willow1" src="iconos/Willow1-pfp.webp" alt="Willow1" class="pfp-image">
-            </div>
-        </div>
-    </div>
-    <script src="scripts.js"></script>
-<script>
-const images = document.querySelectorAll('.pfp-image');
-const dropArea = document.getElementById('drop-area');
-
-images.forEach(image => {
-    image.addEventListener('mousedown', function(e) {
-        // Mover la imagen al dropArea si no está ya ahí
-        if (image.parentElement !== dropArea) {
-            const rect = image.getBoundingClientRect();
-            const offsetX = rect.left + window.scrollX;
-            const offsetY = rect.top + window.scrollY;
-
-            image.style.position = 'absolute';
-            image.style.left = offsetX + 'px';
-            image.style.top = offsetY + 'px';
-
-            dropArea.appendChild(image);
-        }
-
-        let shiftX = e.clientX - image.getBoundingClientRect().left;
-        let shiftY = e.clientY - image.getBoundingClientRect().top;
-
-        function moveAt(pageX, pageY) {
-            image.style.left = pageX - shiftX + 'px';
-            image.style.top = pageY - shiftY + 'px';
-        }
-
-        function onMouseMove(event) {
-            moveAt(event.pageX, event.pageY);
-        }
-
-        document.addEventListener('mousemove', onMouseMove);
-
-        image.onmouseup = function() {
-            document.removeEventListener('mousemove', onMouseMove);
-            image.onmouseup = null;
-        };
-
-        image.ondragstart = function() {
-            return false;
-        };
-    });
-});
+ <html lang="es">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Ah Yo!</title>
+     <link rel="stylesheet" href="styles.css">
+     <style>
+         body {
+             font-family: Arial, sans-serif;
+             background-color: #272727;
+             margin: 0;
+             padding: 0;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+         }
+         .aligned-image {
+             display: inline-block;
+             vertical-align: top; 
+         }
+         .pfp-image {
+             width: 50px;
+             height: 50px;
+             margin-left: 10px; /* Espacio entre las imágenes */
+             margin-bottom: 5px; /* Espacio hacia abajo */
+             position: absolute; /* Necesario para mover libremente */
+             cursor: move; /* Cambia el cursor cuando pasas sobre la imagen */
+         }
+         .container {
+             display: flex;
+             align-items: flex-start; /* Asegura que los elementos se alineen en la parte superior */
+         }
+         .columns-container {
+             display: flex;
+             flex-direction: row; /* Asegura que las columnas estén una al lado de la otra */
+             margin-left: 20px; /* Separación entre la imagen AyHo y las columnas */
+         }
+         .left-column, .right-column, .center-column-1, .center-column-2, .center-column-3, .center-column-4, .center-column-5, .last-column {
+             display: flex;
+             flex-direction: column;
+         }
+         .right-column, .center-column-1, .center-column-2, .center-column-3, .center-column-4, .center-column-5, .last-column {
+             margin-left: 20px; /* Separación entre las columnas */
+         }
+     </style>
+ </head>
+ <body>
+     <div class="container">
+         <img src="images/AyHoAGMap.webp" alt="Ay Ho!" width="375" height="625" class="aligned-image">
+         <img id="mapa" src="images/AyHoAGMap.webp" alt="Ay Ho!" width="375" height="625" class="aligned-image">
+         <div id="imagenes" class="columns-container">
+             <div class="left-column">
+                 <img id="8-bit1" src="iconos/8-Bit1-pfp.webp" alt="8-Bit1" class="pfp-image" draggable="true">
+                 <img id="amber1" src="iconos/Amber1-pfp.webp" alt="Amber1" class="pfp-image" draggable="true">
+                 <img id="angelo1" src="iconos/Angelo1-pfp.webp" alt="Angelo1" class="pfp-image" draggable="true">
+                 <img id="ash1" src="iconos/Ash1-pfp.webp" alt="Ash1" class="pfp-image" draggable="true">
+                 <img id="barley1" src="iconos/Barley1-pfp.webp" alt="Barley1" class="pfp-image" draggable="true">
+                 <img id="bea1" src="iconos/Bea1-pfp.webp" alt="Bea1" class="pfp-image" draggable="true">
+                 <img id="belle1" src="iconos/Belle1-pfp.webp" alt="Belle1" class="pfp-image" draggable="true">
+                 <img id="berry" src="iconos/Berry_pfp.webp" alt="Berry" class="pfp-image" draggable="true">
+                 <img id="bibi1" src="iconos/Bibi1-pfp.webp" alt="Bibi1" class="pfp-image" draggable="true">
+                 <img id="bo1" src="iconos/Bo1-pfp.webp" alt="Bo1" class="pfp-image" draggable="true">
+                 <img id="bonnie1" src="iconos/Bonnie1-pfp.webp" alt="Bonnie1" class="pfp-image" draggable="true">
+             </div>
+             <div class="right-column">
+                 <img id="brock" src="iconos/Brock-pfp.webp" alt="Brock" class="pfp-image">
+                 <img id="bull1" src="iconos/Bull1-pfp.webp" alt="Bull1" class="pfp-image">
+                 <img id="buster1" src="iconos/Buster1-pfp.webp" alt="Buster1" class="pfp-image">
+                 <img id="buzz1" src="iconos/Buzz1-pfp.webp" alt="Buzz1" class="pfp-image">
+                 <img id="byron1" src="iconos/Byron1pfp.webp" alt="Byron1" class="pfp-image">
+                 <img id="carl1" src="iconos/Carl1-pfp.webp" alt="Carl1" class="pfp-image">
+                 <img id="charlie1" src="iconos/Charlie1-pfp.webp" alt="Charlie1" class="pfp-image">
+                 <img id="chester1" src="iconos/Chester1-pfp.webp" alt="Chester1" class="pfp-image">
+                 <img id="chuck1" src="iconos/Chuck1-pfp.webp" alt="Chuck1" class="pfp-image">
+                 <img id="clancy" src="iconos/Clancy_pfp.webp" alt="Clancy" class="pfp-image">
+                 <img id="colette1" src="iconos/Colette1-pfp.webp" alt="Colette1" class="pfp-image">
+             </div>
+             <div class="center-column-1">
+                 <img id="colt1" src="iconos/Colt1-pfp.webp" alt="Colt1" class="pfp-image">
+                 <img id="cordelius1" src="iconos/Cordelius1-pfp.webp" alt="Cordelius1" class="pfp-image">
+                 <img id="crow1" src="iconos/Crow1-pfp.webp" alt="Crow1" class="pfp-image">
+                 <img id="darryl1" src="iconos/Darryl1-pfp.webp" alt="Darryl1" class="pfp-image">
+                 <img id="doug1" src="iconos/Doug1-pfp.webp" alt="Doug1" class="pfp-image">
+                 <img id="draco1" src="iconos/Draco1-pfp.webp" alt="Draco1" class="pfp-image">
+                 <img id="dynamike1" src="iconos/Dynamike1-pfp.webp" alt="Dynamike1" class="pfp-image">
+                 <img id="edgar1" src="iconos/Edgar1-pfp.webp" alt="Edgar1" class="pfp-image">
+                 <img id="el_primo1" src="iconos/El_Primo1-pfp.webp" alt="El Primo1" class="pfp-image">
+                 <img id="emz" src="iconos/Emz-pfp.webp" alt="Emz" class="pfp-image">
+                 <img id="eve1" src="iconos/Eve1-pfp.webp" alt="Eve1" class="pfp-image">
+             </div>
+             <div class="center-column-2">
+                 <img id="fang1" src="iconos/Fang1-pfp.webp" alt="Fang1" class="pfp-image">
+                 <img id="finx1" src="iconos/Finx1-pfp.webp" alt="Finx1" class="pfp-image">
+                 <img id="frank1" src="iconos/Frank1-pfp.webp" alt="Frank1" class="pfp-image">
+                 <img id="gale1" src="iconos/Gale1-pfp.webp" alt="Gale1" class="pfp-image">
+                 <img id="gene1" src="iconos/Gene1-pfp.webp" alt="Gene1" class="pfp-image">
+                 <img id="griff1" src="iconos/Griff1-pfp.webp" alt="Griff1" class="pfp-image">
+                 <img id="grom1" src="iconos/Grom1pfp.webp" alt="Grom1" class="pfp-image">
+                 <img id="gus1" src="iconos/Gus1-pfp.webp" alt="Gus1" class="pfp-image">
+                 <img id="hank1" src="iconos/Hank1-pfp.webp" alt="Hank1" class="pfp-image">
+                 <img id="jacky1" src="iconos/Jacky1-pfp.webp" alt="Jacky1" class="pfp-image">
+                 <img id="janet1" src="iconos/Janet1-pfp.webp" alt="Janet1" class="pfp-image">
+             </div>
+             <div class="center-column-3">
+                 <img id="jessie1" src="iconos/Jessie1-pfp.webp" alt="Jessie1" class="pfp-image">
+                 <img id="juju" src="iconos/Juju-pfp.webp" alt="Juju" class="pfp-image">
+                 <img id="kenji" src="iconos/Kenji-pfp.webp" alt="Kenji" class="pfp-image">
+                 <img id="kit1" src="iconos/Kit1-pfp.webp" alt="Kit1" class="pfp-image">
+                 <img id="larry_lawrie1" src="iconos/Larry_&_Lawrie1-pfp.webp" alt="Larry & Lawrie1" class="pfp-image">
+                 <img id="leon1" src="iconos/Leon1-pfp.webp" alt="Leon1" class="pfp-image">
+                 <img id="lily" src="iconos/Lily-pfp.webp" alt="Lily" class="pfp-image">
+                 <img id="lola1" src="iconos/Lola1-pfp.webp" alt="Lola1" class="pfp-image">
+                 <img id="lou1" src="iconos/Lou1-pfp.webp" alt="Lou1" class="pfp-image">
+                 <img id="lum1" src="iconos/Lumi1-pfp.webp" alt="Lumi1" class="pfp-image">
+                 <img id="maisie1" src="iconos/Maisie1-pfp.webp" alt="Maisie1" class="pfp-image">
+             </div>
+             <div class="center-column-4">
+                 <img id="mandy1" src="iconos/Mandy1-pfp.webp" alt="Mandy1" class="pfp-image">
+                 <img id="max1" src="iconos/Max1-pfp.webp" alt="Max1" class="pfp-image">
+                 <img id="meeple" src="iconos/Meeple-pfp.webp" alt="Meeple" class="pfp-image">
+                 <img id="meg1" src="iconos/Meg1-pfp.webp" alt="Meg1" class="pfp-image">
+                 <img id="melodie" src="iconos/Melodie-pfp.webp" alt="Melodie" class="pfp-image">
+                 <img id="mico1" src="iconos/Mico1-pfp.webp" alt="Mico1" class="pfp-image">
+                 <img id="moe" src="iconos/Moe-pfp.webp" alt="Moe" class="pfp-image">
+                 <img id="mortis1" src="iconos/Mortis1-pfp_29.webp" alt="Mortis1" class="pfp-image">
+                 <img id="mr_p1" src="iconos/Mr._P1-pfp.webp" alt="Mr. P1" class="pfp-image">
+                 <img id="nita1" src="iconos/Nita1-pfp.webp" alt="Nita1" class="pfp-image">
+                 <img id="ollie" src="iconos/Ollie-pfp.webp" alt="Ollie" class="pfp-image">   
+             </div>
+             <div class="center-column-5">
+                 <img id="otis_icon" src="iconos/Otis_Icon.webp" alt="Otis Icon" class="pfp-image">
+                 <img id="pam1" src="iconos/Pam1-pfp.webp" alt="Pam1" class="pfp-image">
+                 <img id="pearl1" src="iconos/Pearl1-pfp.webp" alt="Pearl1" class="pfp-image">
+                 <img id="penny1" src="iconos/Penny1-pfp.webp" alt="Penny1" class="pfp-image">
+                 <img id="piper1" src="iconos/Piper1-pfp.webp" alt="Piper1" class="pfp-image">
+                 <img id="r-t1" src="iconos/R-T1-pfp.webp" alt="R-T1" class="pfp-image">
+                 <img id="rico1" src="iconos/Rico1-pfp.webp" alt="Rico1" class="pfp-image">
+                 <img id="ruffs1" src="iconos/Ruffs1-pfp.webp" alt="Ruffs1" class="pfp-image">
+                 <img id="sam1" src="iconos/Sam1-pfp.webp" alt="Sam1" class="pfp-image">
+                 <img id="sandy1" src="iconos/Sandy1-pfp.webp" alt="Sandy1" class="pfp-image">
+                 <img id="shade" src="iconos/Shade-pfp.webp" alt="Shade" class="pfp-image">
+             </div>
+             <div class="last-column">
+                 <img id="shelly1" src="iconos/Shelly1-pfp.webp" alt="Shelly1" class="pfp-image">
+                 <img id="spike1" src="iconos/Spike1-pfp.webp" alt="Spike1" class="pfp-image">
+                 <img id="sprout1" src="iconos/Sprout1-pfp.webp" alt="Sprout1" class="pfp-image">
+                 <img id="squeak1" src="iconos/Squeak1-pfp.webp" alt="Squeak1" class="pfp-image">
+                 <img id="stu1" src="iconos/Stu1-pfp.webp" alt="Stu1" class="pfp-image">
+                 <img id="surge1" src="iconos/Surge1-pfp.webp" alt="Surge1" class="pfp-image">
+                 <img id="tara1" src="iconos/Tara1-pfp.webp" alt="Tara1" class="pfp-image">
+                 <img id="tick1" src="iconos/Tick1-pfp.webp" alt="Tick1" class="pfp-image">
+                 <img id="willow1" src="iconos/Willow1-pfp.webp" alt="Willow1" class="pfp-image">
+             </div>
+         </div>
+     </div>
+     <script src="scripts.js"></script>
+     <script>
+         const images = document.querySelectorAll('.pfp-image');
+         images.forEach(image => {
+             image.addEventListener('mousedown', function(e) {
+                 let shiftX = e.clientX - image.getBoundingClientRect().left;
+                 let shiftY = e.clientY - image.getBoundingClientRect().top;
+ 
+                 function moveAt(pageX, pageY) {
+                     image.style.left = pageX - shiftX + 'px';
+                     image.style.top = pageY - shiftY + 'px';
+                 }
+ 
+                 function onMouseMove(event) {
+                     moveAt(event.pageX, event.pageY);
+                 }
+ 
+                 document.addEventListener('mousemove', onMouseMove);
+ 
+                 image.onmouseup = function() {
+                     document.removeEventListener('mousemove', onMouseMove);
+                     image.onmouseup = null;
+                 };
+             });
+ 
+             image.ondragstart = function() {
+                 return false;
+             };
+         });
+     </script>
+ </body>
+ </html>
 </script>
 
 </body>
