@@ -20,4 +20,7 @@ let productos = document.querySelectorAll("#imagenes img");
 
 for (let i = 0; i < productos.length; i++) {
     productos[i].setAttribute("draggable", "true");
+    productos[i].addEventListener("dragstart", (event) => {
+        event.dataTransfer.setData("text", event.target.id);
+    })
 }
