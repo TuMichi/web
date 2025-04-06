@@ -13,3 +13,11 @@ function handleClick(event, mapName) {
     // Lógica para manejar el clic
     openImage(mapName);
 }
+
+"use strick";
+let productos = document.querySelectorAll("#imagenes img");
+
+for(let i=0; i<productos.lenght; i++ ){
+productos[i].setAtribute("draggable", "true");
+    
+}
