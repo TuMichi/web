@@ -15,9 +15,9 @@ function handleClick(event, mapName) {
 }
 
 "use strict";
+
 let productos = document.querySelectorAll("#imagenes img");
 
-for(let i=0; i<productos.length; i++ ){
-productos[i].setAttribute("draggable", "true");
-    
+for (let i = 0; i < productos.length; i++) {
+    productos[i].setAttribute("draggable", "true");
 }
