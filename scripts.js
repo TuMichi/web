@@ -14,10 +14,10 @@ function handleClick(event, mapName) {
     openImage(mapName);
 }
 
-"use strick";
+"use strict";
 let productos = document.querySelectorAll("#imagenes img");
 
-for(let i=0; i<productos.lenght; i++ ){
+for(let i=0; i<productos.length; i++ ){
 productos[i].setAtribute("draggable", "true");
     
 }
