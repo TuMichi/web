@@ -54,7 +54,7 @@ header {
 .pfp-image {
     height: 50px;
     width: 50px;
-    position: relative;
+    position: absolute;
 }
 
 .column-3 {
@@ -72,6 +72,6 @@ header {
 }
 
 .container {
-    position: absolute;
+    position: relative;
 }
 
