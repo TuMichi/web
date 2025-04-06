@@ -31,6 +31,9 @@ vCarrito.addEventListener("dragover", (event) => {
 
 vCarrito.addEventListener("drop", (event) => {
     event.preventDefault();
-    let data = event.dataTransfer.getData("text");
-    event.target.appendChild(document.getElementById(data));
+    if( event.target.className === "aligned-image"){
+        let data = event.dataTransfer.getData("text");
+        event.target.appendChild(document.getElementById(data));
+    }
+    
 })
