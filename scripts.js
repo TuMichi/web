@@ -41,9 +41,3 @@ vCarrito.addEventListener("drop", (event) => {
         event.target.appendChild(draggedElement);
     }
 });
-
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') { // Cambia 'Enter' por la tecla que prefieras
-        liberarImagenes();
-    }
-});
