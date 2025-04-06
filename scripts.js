@@ -17,10 +17,20 @@ function handleClick(event, mapName) {
 "use strict";
 
 let productos = document.querySelectorAll("#imagenes img");
-
+ler vCarrito = document.getElementById("mapa");
 for (let i = 0; i < productos.length; i++) {
     productos[i].setAttribute("draggable", "true");
     productos[i].addEventListener("dragstart", (event) => {
         event.dataTransfer.setData("text", event.target.id);
     })
 }
+
+vCarrito.addEventListener("dragover", (event) => {
+    event.preventDefault();
+})
+
+vCarrito.addEventListener("drop", (event) => {
+    event.preventDefault();
+    let data = event.dataTransfer.getData("text");
+    event.target.appendChild(document.getElementById(data));
+})
