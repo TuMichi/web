@@ -8,55 +8,55 @@ Instrucciones: Coloca esta carpeta en tu servidor local o abre index.html en el 
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BrawlMap — estrategia Brawl Stars</title>
-<link rel="stylesheet" href="styles.css">
-<!-- html2canvas para exportar imagen (CDN) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
-<script src="app.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BrawlMap — estrategia Brawl Stars</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- html2canvas para exportar imagen (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
-<header>
-<h1>BrawlMap — planificador de estrategias</h1>
-<div class="controls">
-<label class="btn">Guardar JSON<input id="save-json" type="button" hidden></label>
-<button id="export-json">Descargar JSON</button>
-<input id="import-file" type="file" accept="application/json">
-<button id="export-png">Exportar PNG</button>
-<button id="clear-map">Limpiar mapa</button>
-</div>
-</header>
+  <header>
+    <h1>BrawlMap — planificador de estrategias</h1>
+    <div class="controls">
+      <label class="btn">Guardar JSON<input id="save-json" type="button" hidden></label>
+      <button id="export-json">Descargar JSON</button>
+      <input id="import-file" type="file" accept="application/json">
+      <button id="export-png">Exportar PNG</button>
+      <button id="clear-map">Limpiar mapa</button>
+    </div>
+  </header>
 
 
-<main>
-<aside id="palette">
-<h2>Paleta de Brawlers</h2>
-<p>Arrastra un icono sobre el mapa.</p>
-<div id="brawler-list" class="list">
-<!-- Ejemplo: sustituye los nombres por archivos reales en assets/brawlers/ -->
-<img draggable="false" class="palette-item" data-id="shelly" src="assets/brawlers/shelly.png" alt="Shelly">
-<img draggable="false" class="palette-item" data-id="colt" src="assets/brawlers/colt.png" alt="Colt">
-<img draggable="false" class="palette-item" data-id="nita" src="assets/brawlers/nita.png" alt="Nita">
-<img draggable="false" class="palette-item" data-id="crow" src="assets/brawlers/crow.png" alt="Crow">
-</div>
-<hr>
-<small>Nota: coloca tus iconos en <code>assets/brawlers/</code> con nombres iguales a los data-id o edita el HTML.</small>
-</aside>
+  <main>
+  <aside id="palette">
+    <h2>Paleta de Brawlers</h2>
+    <p>Arrastra un icono sobre el mapa.</p>
+    <div id="brawler-list" class="list">
+      <!-- Ejemplo: sustituye los nombres por archivos reales en assets/brawlers/ -->
+      <img draggable="false" class="palette-item" data-id="shelly" src="assets/brawlers/shelly.png" alt="Shelly">
+      <img draggable="false" class="palette-item" data-id="colt" src="assets/brawlers/colt.png" alt="Colt">
+      <img draggable="false" class="palette-item" data-id="nita" src="assets/brawlers/nita.png" alt="Nita">
+      <img draggable="false" class="palette-item" data-id="crow" src="assets/brawlers/crow.png" alt="Crow">
+    </div>
+    <hr>
+    <small>Nota: coloca tus iconos en <code>assets/brawlers/</code> con nombres iguales a los data-id o edita el HTML.</small>
+  </aside>
 
 
-<section id="map-area">
-<div id="map-container">
-<!-- mapa como fondo CSS; también puedes usar <img> si prefieres -->
-<div id="placed-layer" aria-label="Capa de brawlers"></div>
-</div>
-</section>
-</main>
+  <section id="map-area">
+     <div id="map-container">
+      <!-- mapa como fondo CSS; también puedes usar <img> si prefieres -->
+      <div id="placed-layer" aria-label="Capa de brawlers"></div>
+      </div>
+    </section>
+  </main>
 
 
-<footer>
-<small>Hecho con ❤️ — arrastra para colocar, usa exportar/guardar para compartir</small>
-</footer>
+  <footer>
+    <small>Hecho con ❤️ — arrastra para colocar, usa exportar/guardar para compartir</small>
+  </footer>
 
 
 <!-- A continuación incluimos el contenido de styles.css y app.js para referencia de edición rápida. -->
@@ -64,3 +64,112 @@ Instrucciones: Coloca esta carpeta en tu servidor local o abre index.html en el 
 
 </body>
 </html>
+
+
+/* ---------- File: styles.css ---------- */
+
+
+:root{--bg:#0f1724;--card:#0b1220;--accent:#ffcc00}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:var(--bg);color:#e6eef8}
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
+header h1{font-size:18px;margin:0}
+.controls{display:flex;gap:8px;align-items:center}
+.controls button, .controls input[type="file"], .controls .btn{background:#0f1724;border:1px solid rgba(255,255,255,0.06);color:#e6eef8;padding:6px 10px;border-radius:8px;cursor:pointer}
+main{display:flex;gap:16px;padding:16px}
+#palette{width:220px;background:var(--card);padding:12px;border-radius:10px;box-shadow:0 4px 14px rgba(2,6,23,0.6)}
+#palette h2{margin-top:0;font-size:16px}
+.list{display:flex;flex-wrap:wrap;gap:8px}
+.palette-item{width:56px;height:56px;object-fit:contain;border-radius:8px;border:2px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);cursor:grab}
+#map-area{flex:1}
+#map-container{position:relative;width:100%;height:72vh;border-radius:10px;overflow:hidden;background-image:url('assets/map.png');background-size:cover;background-position:center;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 36px rgba(2,6,23,0.7)}
+#placed-layer{position:absolute;inset:0}
+.placed{position:absolute;width:56px;height:56px;touch-action:none;user-select:none;border-radius:10px;transform-origin:center center;display:flex;align-items:center;justify-content:center}
+.placed img{width:100%;height:100%;object-fit:contain}
+.placed .remove-btn{position:absolute;top:-8px;right:-8px;background:#ff4d4f;border-radius:50%;width:22px;height:22px;border:2px solid #fff;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+footer{padding:10px 18px;text-align:center;color:rgba(230,238,248,0.6)}
+
+
+/* Responsive */
+@media (max-width:900px){main{flex-direction:column}#palette{width:100%;order:2}#map-container{height:60vh}}
+
+
+/* ---------- File: app.js ---------- */
+if(rectsOverlap(node, other)) return true;
+}
+return false;
+}
+
+
+// Try to nudge to nearest free position (basic BFS-like search grid)
+function nudgeAway(node){
+const r = map.getBoundingClientRect();
+const step = 8;
+const maxRadius = Math.max(r.width, r.height);
+const startX = node.x; const startY = node.y;
+for(let radius=step; radius<maxRadius; radius+=step){
+for(let dx=-radius; dx<=radius; dx+=step){
+for(let dy=-radius; dy<=radius; dy+=step){
+node.x = startX + dx; node.y = startY + dy; clampToMap(node);
+if(!overlapsAny(node)) { updateNodePosition(node); return true; }
+}
+}
+}
+node.x = startX; node.y = startY; updateNodePosition(node);
+return false;
+}
+
+
+// Export JSON
+exportJsonBtn.addEventListener('click', ()=>{
+const data = placed.map(p=>({id:p.id,src:p.src,x:Math.round(p.x),y:Math.round(p.y),w:p.w,h:p.h}));
+const blob = new Blob([JSON.stringify({map: 'assets/map.png', items: data}, null, 2)], {type:'application/json'});
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a'); a.href=url; a.download='brawlmap.json'; a.click(); URL.revokeObjectURL(url);
+});
+
+
+// Import JSON
+importFile.addEventListener('change', (ev)=>{
+const f = ev.target.files[0]; if(!f) return;
+const reader = new FileReader();
+reader.onload = ()=>{
+try{
+const obj = JSON.parse(reader.result);
+loadFromJSON(obj);
+} catch(e){ alert('JSON inválido'); }
+};
+reader.readAsText(f);
+});
+
+
+function loadFromJSON(obj){
+// clear
+placed.slice().forEach(p=>removePlaced(p));
+if(!obj.items) return;
+obj.items.forEach(it=>{
+const node = createPlaced(it.id, it.src);
+node.x = it.x; node.y = it.y; clampToMap(node); updateNodePosition(node);
+});
+}
+
+
+// Export PNG (html2canvas)
+exportBtn.addEventListener('click', ()=>{
+html2canvas(map, {allowTaint:true, useCORS:true}).then(canvas=>{
+const url = canvas.toDataURL('image/png');
+const a = document.createElement('a'); a.href = url; a.download = 'brawlmap.png'; a.click();
+}).catch(err=>{ alert('Error exportando imagen: '+err.message); });
+});
+
+
+clearBtn.addEventListener('click', ()=>{ placed.slice().forEach(p=>removePlaced(p)); });
+
+
+// Optional: keyboard delete selected - not implemented (could add selection state)
+
+
+// Basic touch-friendly pointer handling is already supported via pointer events.
+
+
+});
