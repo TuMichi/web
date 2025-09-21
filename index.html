@@ -1,100 +1,66 @@
-<!DOCTYPE html>
+<!--
+Archivo: index.html
+Descripción: Aplicación simple para colocar iconos de Brawlers sobre un mapa, evitando solapamientos, con guardar/recuperar y exportar imagen.
+Instrucciones: Coloca esta carpeta en tu servidor local o abre index.html en el navegador. Crea una carpeta `assets/brawlers/` con iconos (png) y `assets/map.png` con el mapa.
+-->
+
+
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brawlplan</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        body {
-             font-family: Arial, sans-serif;
-             background-color: #272727;
-             margin: 0;
-             padding: 0;
-             display: flex;
-             flex-direction: column;
-             align-items: center;
-         }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BrawlMap — estrategia Brawl Stars</title>
+<link rel="stylesheet" href="styles.css">
+<!-- html2canvas para exportar imagen (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+<script src="app.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Haz tu estrategia!</h1>
-    </header>
+<header>
+<h1>BrawlMap — planificador de estrategias</h1>
+<div class="controls">
+<label class="btn">Guardar JSON<input id="save-json" type="button" hidden></label>
+<button id="export-json">Descargar JSON</button>
+<input id="import-file" type="file" accept="application/json">
+<button id="export-png">Exportar PNG</button>
+<button id="clear-map">Limpiar mapa</button>
+</div>
+</header>
 
-    <section class="game-section" id="Atrapagemas">
-       <h2>Atrapa Gemas</h2>
-        <div style="display: flex; gap: 10px;">
-            <div>
-                <h3>Ay Ho!</h3>
-                <img src="images/AyHoAGMap.webp" alt="Ay Ho!" class="game-image" onclick="handleClick(event, 'atrapagemas')" width="150" height="250" usemap="#map1">
-                <map name="map1">
-                    <area shape="rect" coords="0,0,150,250" alt="Ay Ho!" href="AyHoAGMap.webp">
-                </map>
-            </div>
-            <div>
-                <h3>Brrum Brrum</h3>
-               <img src="images/BrrumAGMap.webp" alt="Brrum Brrum" class="game-image" onclick="handleClick(event, 'atrapagemas')" width="150" height="250" usemap="#map2">
-<map name="map2">
-    <area shape="rect" coords="0,0,150,250" alt="Brrum Brrum" href="BrrumAGMap.webp">
-</map>
-            </div>
-             <div>
-                <h3>Salon Recreativo</h3>
-                <img src="images/SalonRecAGMap.webp" alt="Salon Recreativo" class="game-image" onclick="handleClick(event, 'atrapagemas')" width="150" height="250" usemap="#map3">
-                <map name="map3">
-                    <area shape="rect" coords="0,0,150,250" alt="Salon Recreativo" href="SalonRecAGMap.webp">
-                </map>
-            </div>
-        </div>
-    </section>
-    <section class="game-section" id="balonbrawl">
-        <h2>Balon Brawl</h2>
-        <div style="display: flex; gap: 10px;">
-            <div>
-                <h3>Estadio Estruendoso</h3>
-               <img src="images/EstadioEstruendosoBBMap.webp" alt="Estadio Estruendoso" class="game-image" onclick="handleClick(event, 'balonbrawl')" width="150" height="250" usemap="#map4">
-<map name="map4">
-    <area shape="rect" coords="0,0,150,250" alt="Estadio Estruendoso" href="EstadioEstruendosoBBMap.webp">
-</map>
-            </div>
-          <div>
-                <h3>Palco Central</h3>
-                <img src="images/PalcoCentralBBMap.webp" alt="Palco Central" class="game-image" onclick="handleClick(event, 'balonbrawl')" width="150" height="250" usemap="#map5">
-                <map name="map5">
-                    <area shape="rect" coords="0,0,150,250" alt="Palco Central" href="PalcoCentralBBMap.webp">
-                </map>
-            </div>
-            <div>
-                <h3>Pinball</h3>
-                <img src="images/PinballBBMap.webp" alt="Pinball" class="game-image" onclick="handleClick(event, 'balonbrawl')" width="150" height="250" usemap="#map6">
-                <map name="map6">
-                    <area shape="rect" coords="0,0,150,250" alt="Pinball" href="PinballBBMap.webp">
-                </map>
-            </div>
-        </div>
-    </section>
-    <section class="game-section" id="cazaestelar">
-        <h2>Caza Estelar</h2>
-        <img src="images/cazaestelar.jpg" alt="Caza Estelar" class="game-image" onclick="openImage('cazaestelar')">
-    </section>
-    <section class="game-section" id="atraco">
-        <h2>Atraco</h2>
-        <img src="images/atraco.jpg" alt="Atraco" class="game-image" onclick="openImage('atraco')">
-    </section>
-    <section class="game-section" id="zonarestringida">
-        <h2>Zona Restringida</h2>
-        <img src="images/zonarestringida.jpg" alt="Zona Restringida" class="game-image" onclick="openImage('zonarestringida')">
-    </section>
-    <section class="game-section" id="noqueo">
-        <h2>Noqueo</h2>
-        <img src="images/noqueo.jpg" alt="Noqueo" class="game-image" onclick="openImage('noqueo')">
-    </section>
 
-    <div id="overlay" class="overlay" onclick="closeOverlay()">
-        <img id="overlay-image" src="" alt="Imagen amplia">
-    </div>
+<main>
+<aside id="palette">
+<h2>Paleta de Brawlers</h2>
+<p>Arrastra un icono sobre el mapa.</p>
+<div id="brawler-list" class="list">
+<!-- Ejemplo: sustituye los nombres por archivos reales en assets/brawlers/ -->
+<img draggable="false" class="palette-item" data-id="shelly" src="assets/brawlers/shelly.png" alt="Shelly">
+<img draggable="false" class="palette-item" data-id="colt" src="assets/brawlers/colt.png" alt="Colt">
+<img draggable="false" class="palette-item" data-id="nita" src="assets/brawlers/nita.png" alt="Nita">
+<img draggable="false" class="palette-item" data-id="crow" src="assets/brawlers/crow.png" alt="Crow">
+</div>
+<hr>
+<small>Nota: coloca tus iconos en <code>assets/brawlers/</code> con nombres iguales a los data-id o edita el HTML.</small>
+</aside>
 
-    <script src="js/scripts.js"></script>
+
+<section id="map-area">
+<div id="map-container">
+<!-- mapa como fondo CSS; también puedes usar <img> si prefieres -->
+<div id="placed-layer" aria-label="Capa de brawlers"></div>
+</div>
+</section>
+</main>
+
+
+<footer>
+<small>Hecho con ❤️ — arrastra para colocar, usa exportar/guardar para compartir</small>
+</footer>
+
+
+<!-- A continuación incluimos el contenido de styles.css y app.js para referencia de edición rápida. -->
+
+
 </body>
 </html>
